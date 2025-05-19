@@ -1,7 +1,35 @@
 // Initialize Feather Icons
 document.addEventListener('DOMContentLoaded', () => {
     feather.replace();
+    
+    // Initialize dark mode
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const html = document.documentElement;
+    
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        html.classList.add('dark');
+        updateDarkModeIcon(true);
+    }
+
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const isDark = html.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateDarkModeIcon(isDark);
+        });
+    }
 });
+
+function updateDarkModeIcon(isDark) {
+    const icon = document.querySelector('#dark-mode-toggle i');
+    if (icon) {
+        icon.setAttribute('data-feather', isDark ? 'sun' : 'moon');
+        feather.replace();
+    }
+}
 
 // Mobile menu toggle
 const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -87,12 +115,4 @@ document.querySelectorAll('.bg-gray-100.dark\\:bg-gray-700.rounded-lg').forEach(
 // Add skill-icon class to skill icons
 document.querySelectorAll('.w-12.h-12.mx-auto.text-blue-500.mb-4').forEach(icon => {
     icon.classList.add('skill-icon');
-});
-
-// Dark mode toggle
-const darkModeToggle = document.getElementById('dark-mode-toggle');
-const html = document.documentElement;
-
-darkModeToggle.addEventListener('click', () => {
-    html.classList.toggle('dark');
 }); 

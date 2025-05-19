@@ -1,29 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            'bg-primary': '#1a1a1a',
+                            'bg-secondary': '#2d2d2d',
+                            'text-primary': '#ffffff',
+                            'text-secondary': '#e5e5e5'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
-<body class="bg-gray-100 dark:bg-gray-900">
+<body class="bg-gray-100 dark:bg-gray-900 transition-colors duration-200">
     <!-- Navigation -->
-    <nav class="fixed w-full bg-white dark:bg-gray-800 shadow-md z-50">
+    <nav class="fixed w-full bg-white dark:bg-gray-800 shadow-md z-50 transition-colors duration-200">
         <div class="container mx-auto px-6 py-3">
             <div class="flex items-center justify-between">
-                <div class="text-xl font-bold text-gray-800 dark:text-white">Portfolio</div>
+                <div class="text-xl font-bold text-gray-800 dark:text-white transition-colors duration-200">Portfolio</div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-500">Home</a>
-                    <a href="#about" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-500">About</a>
-                    <a href="#skills" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-500">Skills</a>
-                    <a href="#projects" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-500">Projects</a>
-                    <a href="#contact" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-500">Contact</a>
+                    <a href="#home" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors duration-200">Home</a>
+                    <a href="#about" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors duration-200">About</a>
+                    <a href="#skills" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors duration-200">Skills</a>
+                    <a href="#projects" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors duration-200">Projects</a>
+                    <a href="#contact" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors duration-200">Contact</a>
                 </div>
-                <button class="md:hidden" id="mobile-menu-button">
-                    <i data-feather="menu" class="w-6 h-6 text-gray-600 dark:text-gray-300"></i>
-                </button>
+                <div class="flex items-center space-x-4">
+                    <button id="dark-mode-toggle" class="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+                        <i data-feather="moon" class="w-5 h-5"></i>
+                    </button>
+                    <button class="md:hidden" id="mobile-menu-button">
+                        <i data-feather="menu" class="w-6 h-6 text-gray-600 dark:text-gray-300"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
@@ -34,11 +56,11 @@
         <div class="decoration decoration-2"></div>
         <div class="container mx-auto px-4 text-center">
             <img src="images/Aqeel_Profile_Pic.png" alt="HTML5" class="w-16 h-16 mx-auto mb-4 animate-float">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 text-gray-800 dark:text-gray-800">
                 Hi, I'm <span class="gradient-text">Muhammad Aqeel</span>
             </h1>
-            <p class="text-xl md:text-2xl mb-8 text-gray-600 dark:text-gray-300">
-                A passionate web developer crafting beautiful digital experiences
+            <p class="text-xl md:text-2xl mb-8 text-gray-700 dark:text-gray-900">
+                A passionate web developer
             </p>
             <a href="#contact" class="glow-button bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full transition-all duration-300">
                 Get in Touch
@@ -55,21 +77,21 @@
                 <div class="flex flex-col md:flex-row items-center gap-8 mb-8">
                     <img src="images/Aqeel_Profile_Pic.png" alt="Developer" class="w-48 h-48 rounded-full object-cover shadow-lg">
                     <div>
-                        <p class="mb-6">
+                        <p class="mb-6 text-gray-600 dark:text-gray-300">
                             I am a passionate developer with a good foundation in web development and a keen eye for design.
                             My journey in tech has equipped me with the skills to create beautiful, functional, and user-friendly applications.
                             I am a quick learner and I am always looking to improve my skills.
                             And now i'm in my final year of my bachelors in Computer Science.
                         </p>
-                        <p class="mb-6">
+                        <p class="mb-6 text-gray-600 dark:text-gray-300">
                             When I'm not coding, you can find me exploring new technologies, contributing to open-source projects,
                             or sharing my knowledge through technical writing.
                         </p>
                         <div class="flex gap-6">
-                            <a href="https://github.com/muhammadaqeel" target="_blank" class="text-gray-600 hover:text-blue-500 transition-colors">
+                            <a href="https://github.com/Aqeel-dev-ai" target="_blank" class="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors">
                                 <i data-feather="github" class="w-8 h-8"></i>
                             </a>
-                            <a href="https://linkedin.com/in/muhammadaqeel" target="_blank" class="text-gray-600 hover:text-blue-500 transition-colors">
+                            <a href="https://linkedin.com/in/muhammad-aqeel-786855358" target="_blank" class="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors">
                                 <i data-feather="linkedin" class="w-8 h-8"></i>
                             </a>
                         </div>
@@ -80,7 +102,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20">
+    <section id="skills" class="py-20 bg-gray-50 dark:bg-gray-900">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-white mb-12">Skills</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -104,8 +126,6 @@
                     <i data-feather="wind" class="w-12 h-12 mx-auto text-blue-500 mb-4"></i>
                     <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Django</h3>
                 </div>
-                
-                
             </div>
         </div>
     </section>
@@ -125,8 +145,8 @@
                             This system is built using Python. We can add, delete, update view and search students.
                         </p>
                         <div class="flex gap-2">
-                            <span class="skill-tag bg-blue-100 text-blue-600">Python</span>
-                            <span class="skill-tag bg-gray-100 text-gray-600">CLI</span>
+                            <span class="skill-tag bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-300">Python</span>
+                            <span class="skill-tag bg-gray-100 text-gray-600 dark:bg-gray-600 dark:text-gray-300">CLI</span>
                         </div>
                     </div>
                 </div>
@@ -141,9 +161,9 @@
                             I have used some feather icons for the icons. 
                         </p>
                         <div class="flex gap-2">
-                            <span class="skill-tag bg-blue-100 text-blue-600">HTML</span>
-                            <span class="skill-tag bg-purple-100 text-purple-600">CSS</span>
-                            <span class="skill-tag bg-yellow-100 text-yellow-600">JavaScript</span>
+                            <span class="skill-tag bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-300">HTML</span>
+                            <span class="skill-tag bg-purple-100 text-purple-600 dark:bg-purple-900 dark:text-purple-300">CSS</span>
+                            <span class="skill-tag bg-yellow-100 text-yellow-600 dark:bg-yellow-900 dark:text-yellow-300">JavaScript</span>
                         </div>
                     </div>
                 </div>
@@ -157,8 +177,8 @@
                             using python. 
                         </p>
                         <div class="flex gap-2">
-                            <span class="skill-tag bg-blue-100 text-blue-600">Python</span>
-                            <span class="skill-tag bg-gray-100 text-gray-600">CLI</span>
+                            <span class="skill-tag bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-300">Python</span>
+                            <span class="skill-tag bg-gray-100 text-gray-600 dark:bg-gray-600 dark:text-gray-300">CLI</span>
                         </div>
                     </div>
                 </div>
@@ -167,7 +187,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20">
+    <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-900">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-white mb-12">Get in Touch</h2>
             <div class="max-w-2xl mx-auto">
@@ -176,14 +196,14 @@
                     <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md text-center">
                         <i data-feather="mail" class="w-8 h-8 mx-auto text-blue-500 mb-4"></i>
                         <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Email</h3>
-                        <a href="mailto:muhammadaqeel@example.com" class="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors">
+                        <a href="mailto:aqeel032035@gmail.com" class="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors">
                             aqeel032035@gmail.com
                         </a>
                     </div>
                     <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md text-center">
                         <i data-feather="phone" class="w-8 h-8 mx-auto text-blue-500 mb-4"></i>
                         <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Phone</h3>
-                        <a href="tel:+1234567890" class="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors">
+                        <a href="tel:+923203577194" class="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors">
                             +92 320 3577194
                         </a>
                     </div>
@@ -216,13 +236,13 @@
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-4 md:mb-0">
-                    <p>&copy; 2024 Muhammad Aqeel. All rights reserved.</p>
+                    <p class="text-gray-300">&copy; 2024 Muhammad Aqeel. All rights reserved.</p>
                 </div>
                 <div class="flex space-x-6">
-                    <a href="https://github.com/Aqeel-dev-ai" target="_blank" class="text-white hover:text-blue-500 transition-colors">
+                    <a href="https://github.com/Aqeel-dev-ai" target="_blank" class="text-gray-300 hover:text-blue-500 transition-colors">
                         <i data-feather="github" class="w-6 h-6"></i>
                     </a>
-                    <a href="https://linkedin.com/in/muhammad-aqeel-786855358" target="_blank" class="text-white hover:text-blue-500 transition-colors">
+                    <a href="https://linkedin.com/in/muhammad-aqeel-786855358" target="_blank" class="text-gray-300 hover:text-blue-500 transition-colors">
                         <i data-feather="linkedin" class="w-6 h-6"></i>
                     </a>
                 </div>
